@@ -22,9 +22,10 @@ html {
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: var(--white);
+  background: linear-gradient(to bottom, #8dd5f4, #ffffff);
   color: var(--dark);
   overflow-x: hidden;
+  height: 100vh;
 }
 
 /* ========== Canvas Background ========== */
@@ -169,14 +170,45 @@ body {
   z-index: -1;
 }
 
+/* ========== Arc Animation Section ========== */
+.arc-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#arc-svg {
+  position: absolute;
+  top: 50%;
+  left: 0; /* Use right: 0 for right-side arc */
+  transform: translateY(-50%);
+  width: 100%;
+  height: 100%;
+}
+
+.character {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.character img {
+  width: 120px;
+  animation: zoomIn 1s ease-in-out forwards;
+  opacity: 0;
+}
+
 /* ========== Animations ========== */
 @keyframes zoomIn {
-  from {
-    transform: scale(0.8);
+  0% {
+    transform: scale(0.6) translate(-50%, -50%);
     opacity: 0;
   }
-  to {
-    transform: scale(1);
+  100% {
+    transform: scale(1) translate(-50%, -50%);
     opacity: 1;
   }
 }
