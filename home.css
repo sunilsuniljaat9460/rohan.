@@ -181,7 +181,7 @@ body {
 #arc-svg {
   position: absolute;
   top: 50%;
-  left: 0; /* Use right: 0 for right-side arc */
+  left: 0;
   transform: translateY(-50%);
   width: 100%;
   height: 100%;
